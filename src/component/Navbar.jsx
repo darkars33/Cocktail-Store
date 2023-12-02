@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 export default function Navbar() {
+  const [menu , setMenu] = useState(false);
+
+  console.log(menu);
   return (
     <nav className="navbar">
       <div className="nav-center">
@@ -24,9 +28,51 @@ export default function Navbar() {
           </svg>
         </Link>
         <ul className="nav-links">
+
+          <div className="diss"
+
+          
+          
+          >
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
+
+        </div>
+        <Link  
+        
+         
+        >
+          <div className="responsive" onClick={()=>setMenu(!menu)}>
+          
+          {menu ? <CloseIcon/> : <MenuIcon/> }
+
+          </div>
+
+          
+
+          {menu && ( <div className="child">
+
+<Link to="/">Home</Link>
+
+<Link to="/about">About</Link>
+
+<Link to="/about">Contact Us</Link>
+<Link to="/about">Footer</Link>
+
+
+
+
+
+  </div>)
+
+  
+  }
+          </Link>
+        
+
+
         </ul>
+
       </div>
     </nav>
   );

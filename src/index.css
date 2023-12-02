@@ -119,6 +119,10 @@ Buttons
   border-color: var(--primaryLightColor);
 }
 
+.responsive{
+
+  display: none;
+}
 .navbar {
   background: var(--mainWhite);
   height: 5rem;
@@ -198,10 +202,41 @@ Buttons
   column-gap: 2rem;
   /* align-items: start; */
 }
+
 @media screen and (min-width: 576px) {
   .cocktails-center {
     grid-template-columns: repeat(auto-fill, minmax(338.8px, 1fr));
   }
+}
+
+@media screen and (max-width: 640px) {
+
+  .responsive{
+    display: flex;
+  }
+  .diss{
+    display: none;
+  }
+
+
+}
+
+.child{
+
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  /* background-color: var(--bg); */
+  height: calc(100vh - 100px);
+  width: 100%;
+  background-color: white;
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  font-size: 36px;
 }
 
 
